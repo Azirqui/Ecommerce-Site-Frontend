@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-
+require('dotenv').config();
+const apiUrl = process.env.REACT_APP_API_URL;
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -11,7 +12,7 @@ const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        axios.post('http://localhost:5000/api/register', { name, email, password })
+        axios.post(`${apiUrl}/api/register`, { name, email, password })
         .then(result => {
             console.log(result);
             if(result.data === "Already registered") {

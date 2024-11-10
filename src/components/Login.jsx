@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+require('dotenv').config();
+const apiUrl = process.env.REACT_APP_API_URL;
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -11,7 +12,7 @@ const Login = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const result = await axios.post('http://localhost:5000/api/login', { email, password });
+            const result = await axios.post(`${apiUrl}/api/login`, { email, password });
             console.log(result.data);
 
             if (result.data.message === "Login successful") {
