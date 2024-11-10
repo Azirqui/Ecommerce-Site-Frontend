@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-const apiUrl = import.meta.env.REACT_APP_API_URL;
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 const ProductList = () => {
     const [products, setProducts] = useState([]);
 

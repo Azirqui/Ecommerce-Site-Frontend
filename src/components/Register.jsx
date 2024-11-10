@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-const apiUrl = import.meta.env.REACT_APP_API_URL;
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
